@@ -1,0 +1,28 @@
+{
+  "name": "lz-fe",
+  "version": "0.0.2",
+  "description": "这是一个淘宝-量子前端基础开发框架包",
+  "main": "",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "d"
+  },
+  "keywords": [
+    "taobao.com",
+    "lzfe",
+    "dev-framework"
+  ],
+  "author": {
+    "name": "yuhao@taobao.com"
+  },
+  "license": "BSD",
+  "devDependencies": {
+    "uglifyjs": "~2.3.6"
+  },
+  "readme": "``````````````````````````````````````````\n淘宝-量子前端开发框架\n``````````````````````````````````````````\n",
+  "_id": "lz-fe@0.0.2",
+  "_from": "lz-fe"
+}
