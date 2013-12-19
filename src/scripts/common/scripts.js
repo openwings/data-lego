@@ -1,5 +1,14 @@
-APP.use(['jquery-2.0.3', 'jquery.ui', 'jquery.ui.touch.punch', 'jquery.htmlClean'], function () {
-    $.getScript('src/scripts/bootstrap.min.js');
+APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.touch.punch', 'jquery.htmlClean'], function () {
+    $.getScript('src/plugins/bootstrap.min.js');
+    var templatePath = 'src/scripts/modules/'
+    $( function () {
+        $('div[data-modulename]').each( function (i, n) {
+            console.warn(n, i);
+            var m = $(n),
+                name = m.data('modulename');
+            m.setTemplateURL([templatePath, '/', name, '/view/', name, '.tpl'].join(''), null, {runnable_functions: true, disallow_functions: false}).processTemplate({});
+        });
+    })
     function supportstorage() {
         if (typeof window.localStorage=='object')
             return true;
@@ -333,7 +342,7 @@ APP.use(['jquery-2.0.3', 'jquery.ui', 'jquery.ui.touch.punch', 'jquery.htmlClean
         restoreData();
         var contenthandle = CKEDITOR.replace( 'contenteditor' ,{
             language: 'zh-cn',
-            contentsCss: ['css/bootstrap-combined.min.css'],
+            //contentsCss: ['src/css/bootstrap-combined.min.css'],
             allowedContent: true
         });
         $("body").css("min-height", $(window).height() - 90);
@@ -471,3 +480,6 @@ APP.use(['jquery-2.0.3', 'jquery.ui', 'jquery.ui.touch.punch', 'jquery.htmlClean
         }, timerSave)
     })
 });
+
+
+
