@@ -1,6 +1,7 @@
-APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.touch.punch', 'jquery.htmlClean'], function () {
+APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.touch.punch', 'jquery.htmlClean', 'Tipsy'], function () {
     $.getScript('src/plugins/bootstrap.min.js');
-    var templatePath = 'src/scripts/modules/'
+    var templatePath = 'src/scripts/modules/',
+        rapPath = 'http://rap.alibaba-inc.com/mock/52';
     $( function () {
         $('div[data-modulename]').each( function (i, n) {
             console.warn(n, i);
@@ -326,7 +327,16 @@ APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.t
             opacity: .35,
             handle: ".drag",
             start: function(e,t) {
-                console.warn(e, t);
+                console.warn(e, t, this);
+                console.warn(t.item.find('div.view[data-apipath]').data('apipath'), t.item.find('div.view[data-apipath]').data('param'));
+                // data api AJAX JSONP get data to stringify and insert to div.view
+                if(t.item.find('div.view[data-apipath]').length == 1) {
+                    var item = t.item.find('div.view[data-apipath]');
+                    $.getJSON(rapPath + item.data('apipath') + '?callback=?', $.param(item.data('param')), function (data) {
+                        console.warn(item.data('param'), '    param in property');
+                        item.find('pre').html(JSON.stringify(data));
+                    });
+                }
                 if (!startdrag) stopsave++;
                 startdrag = 1;
             },
@@ -413,7 +423,6 @@ APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.t
         });
         $("#download").click(function() {
             downloadLayout();
-            console.warn('download');
             return false
         });
         $("#downloadhtml").click(function() {

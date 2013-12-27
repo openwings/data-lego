@@ -1,3 +1,4 @@
+<script type="text/javascript" src="src/scripts/modules/datamodule/controller/datamodule.js"></script>
 <ul class="nav nav-list accordion-group">
     <li class="nav-header"><i class="icon-plus icon-white"></i> 数据接口 <span class="label label-important">NEW!</span>
             <div class="pull-right popover-info"><i class="icon-question-sign "></i>
@@ -8,7 +9,7 @@
             </div>
         </div>
     </li>
-    <li style="display: none;" class="boxes" id="elmBase">
-        <div class="preview">建设中..数据接口列表及JSON输出</div>
+    <li style="display: none;" class="boxes" id="JDataList">
+        <div class="preview">loading...</div>
     </li>
 </ul>

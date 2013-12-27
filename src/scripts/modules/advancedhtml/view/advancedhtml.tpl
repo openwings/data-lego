@@ -8,7 +8,7 @@
             </div>
         </div>
     </li>
-    <li style="display: none;" class="boxes" id="elmBase">
+    <li style="display: none;" class="boxes">
         <div class="preview">建设中..模板及组件组合</div>
     </li>
 </ul>
