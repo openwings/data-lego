@@ -173,6 +173,8 @@
         $('#JChartsList').setTemplateURL('src/scripts/modules/charts/view/chartslist.tpl', null, {runnable_functions: true, disallow_functions: false}).processTemplate({
             chartsMap: chartsList
         });
+        $('div.preview').tipsy({
+            gravity: 'nw'
+        })
     //});
-    $('div.preview').tipsy({})
 }();

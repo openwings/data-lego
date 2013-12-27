@@ -93,6 +93,8 @@
             $('#JDataList').setTemplateURL('src/scripts/modules/datamodule/view/datalist.tpl', null, {runnable_functions: true, disallow_functions: false}).processTemplate({
                 dataMap: apiMap
             });
-            $('div.preview').tipsy({})
+            $('div.preview').tipsy({
+                gravity: 'nw'
+            })
         //}, 3000);
 }();
