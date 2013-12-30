@@ -24,7 +24,7 @@
         </span>
     </span>
     <div class="preview" style="width: 110px; height: 20px; overflow: hidden;" original-title="{$T.list.name}">{$T.list.name}</div>
-    <div class="view"></div>
+    <div class="view {$T.list.pathName}" data-chart="{$T.list.pathName}"></div>
 </div>
 {#/for}
 {#/for}

@@ -1,9 +1,11 @@
 !function () {
+    var chartModulePath = 'src/scripts/modules/charts/modules/'
     var chartsList = [
         {"name": "Line charts",
         "list": [
             {"name": "Basic line",
-            "settings": ""},
+            "settings": "",
+            "pathName": "basicline"},
             {"name": "Ajax loaded data, clickable points",
             "settings": ""},
             {"name": "With data labels",

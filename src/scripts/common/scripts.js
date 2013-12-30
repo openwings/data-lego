@@ -1,4 +1,4 @@
-APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.touch.punch', 'jquery.htmlClean', 'Tipsy'], function () {
+APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.touch.punch', 'jquery.htmlClean', 'highcharts', 'Tipsy'], function () {
     $.getScript('src/plugins/bootstrap.min.js');
     var templatePath = 'src/scripts/modules/',
         rapPath = 'http://rap.alibaba-inc.com/mock/52';
@@ -335,6 +335,13 @@ APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.t
                     $.getJSON(rapPath + item.data('apipath') + '?callback=?', $.param(item.data('param')), function (data) {
                         console.warn(item.data('param'), '    param in property');
                         item.find('pre').html(JSON.stringify(data));
+                    });
+                }
+                // chart preview content wrapper
+                if(t.item.find('div.view[data-chart]').length == 1) {
+                    var chartItem = t.item.find('div.view[data-chart]');
+                    $.getScript(templatePath + 'charts/modules/' + chartItem.data('chart') + '.js?x=1', function () {
+                        console.warn('    get script done: ',  chartItem);
                     });
                 }
                 if (!startdrag) stopsave++;
