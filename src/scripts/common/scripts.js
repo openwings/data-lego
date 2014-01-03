@@ -332,7 +332,7 @@ APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.t
                 // data api AJAX JSONP get data to stringify and insert to div.view
                 if(t.item.find('div.view[data-apipath]').length == 1) {
                     var item = t.item.find('div.view[data-apipath]');
-                    $.getJSON(rapPath + item.data('apipath') + '?callback=?', $.param(item.data('param')), function (data) {
+                    $.getJSON(rapPath + item.data('apipath') + '?callback=?', item.data('param'), function (data) {
                         console.warn(item.data('param'), '    param in property');
                         item.find('pre').html(JSON.stringify(data));
                     });
@@ -351,10 +351,17 @@ APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.t
                         async: false,
                         //dataType: 'JSON',
                         success: function (data) {
+                            var settings;
                             console.warn(data, ' async get json done: ',  chartItem);
                             // @TODO: validate data
                             // render charts to div.view
-                            chartItem.highcharts($.extend(true, data, chartItem.data('settings') || {}));
+                            try {
+                                settings = chartItem.data('settings');
+                            }   catch (e) {
+                                settings = {};
+                            }
+                            console.warn(settings, '   in drag');
+                            chartItem.highcharts($.extend(true, data, settings));
                         }
                     });
                 }

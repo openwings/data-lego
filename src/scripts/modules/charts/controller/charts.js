@@ -6,7 +6,7 @@
             {"name": "Basic line",
             "settings": {
                 title: {
-                    text: 'title from settings property of DOM data-settings'
+                    text: 'tixtle from settings property of DOM data-settings'
                 }
             },
             "pathName": "basicline"}
@@ -33,7 +33,7 @@
             "name": "Area charts",
             "list": [
                 {"name": "Basic area",
-                "settings": ""
+                "settings": "",
                 "pathName": "basicarea"}
                 /*
                 {"name": "Area with negative values",
@@ -59,7 +59,9 @@
             "name": "Column and bar charts",
             "list": [
                 {"name": "Basic bar",
-                "settings": ""},
+                "settings": "",
+                "pathName": "basicbar"}
+                /*
                 {"name": "Stacked bar",
                 "settings": ""},
                 {"name": "Bar with negative stack",
@@ -82,13 +84,16 @@
                 "settings": ""},
                 {"name": "Column range",
                 "settings": ""}
+                */
             ]
         },
         {
             "name": "Pie charts",
             "list": [
                 {"name": "Pie chart",
-                "settings": ""},
+                "settings": "",
+                "pathName": "basicpie"}
+                /*
                 {"name": "Pie with gradient fill",
                 "settings": ""},
                 {"name": "Pie with legend",
@@ -99,6 +104,7 @@
                 "settings": ""},
                 {"name": "Pie with drilldown",
                 "settings": ""}
+                */
             ]
         },
         {
