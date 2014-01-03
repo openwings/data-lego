@@ -340,8 +340,22 @@ APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.t
                 // chart preview content wrapper
                 if(t.item.find('div.view[data-chart]').length == 1) {
                     var chartItem = t.item.find('div.view[data-chart]');
+                    /*
                     $.getScript(templatePath + 'charts/modules/' + chartItem.data('chart') + '.js?x=1', function () {
                         console.warn('    get script done: ',  chartItem);
+                    });
+                    */
+                    console.warn(chartItem);
+                    $.ajax({
+                        url: templatePath + 'charts/modules/' + chartItem.data('chart') + '.json',
+                        async: false,
+                        //dataType: 'JSON',
+                        success: function (data) {
+                            console.warn(data, ' async get json done: ',  chartItem);
+                            // @TODO: validate data
+                            // render charts to div.view
+                            chartItem.highcharts($.extend(true, data, chartItem.data('settings') || {}));
+                        }
                     });
                 }
                 if (!startdrag) stopsave++;

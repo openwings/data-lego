@@ -4,8 +4,13 @@
         {"name": "Line charts",
         "list": [
             {"name": "Basic line",
-            "settings": "",
-            "pathName": "basicline"},
+            "settings": {
+                title: {
+                    text: 'title from settings property of DOM data-settings'
+                }
+            },
+            "pathName": "basicline"}
+            /*
             {"name": "Ajax loaded data, clickable points",
             "settings": ""},
             {"name": "With data labels",
@@ -22,12 +27,15 @@
             "settings": ""},
             {"name": "Logarithmic axis",
             "settings": ""}
+            */
         ]},
         {
             "name": "Area charts",
             "list": [
                 {"name": "Basic area",
-                "settings": ""},
+                "settings": ""
+                "pathName": "basicarea"}
+                /*
                 {"name": "Area with negative values",
                 "settings": ""},
                 {"name": "Stacked area",
@@ -44,6 +52,7 @@
                 "settings": ""},
                 {"name": "Area range and line",
                 "settings": ""}
+                */
             ]
         },
         {
