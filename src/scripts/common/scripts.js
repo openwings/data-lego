@@ -42,7 +42,11 @@ APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.t
         data.list[data.count] = window.demoHtml;
         data.count++;
         if (supportstorage()) {
-            localStorage.setItem("layoutdata",JSON.stringify(data));
+            try {
+                localStorage.setItem("layoutdata",JSON.stringify(data));
+            } catch (e) {
+                console.warn('localstorage maybe full or throw a error of ', e);
+            }
         }
         layouthistory = data;
         //console.log(data);
