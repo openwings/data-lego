@@ -207,7 +207,7 @@ APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.t
             }
         })
     }
-    function configurationElm(e, t) {
+    function configurationElm() {
         $(".demo").delegate(".configuration > a", "click", function(e) {
             e.preventDefault();
             var t = $(this).parent().next().next().children();
@@ -216,8 +216,8 @@ APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.t
         });
         $(".demo").delegate(".configuration .dropdown-menu a", "click", function(e) {
             e.preventDefault();
-            var t = $(this).parent().parent();
-            var n = t.parent().parent().next().next().children();
+            var t = $(this).parent().parent(); //ul DOM
+            var n = t.parent().parent().next().next().children(); //div.view DOM
             t.find("li").removeClass("active");
             $(this).parent().addClass("active");
             var r = "";
@@ -228,6 +228,13 @@ APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.t
             n.removeClass(r);
             n.addClass($(this).attr("rel"))
         })
+        $(".demo").delegate(".configuration .render-list a", "click", function(e) {
+            var me = $(this),
+                renderType = me.attr('rel');
+                viewContent = me.parents('div.box').find('div.view');
+            console.warn(me, renderType, viewContent, '  clicked in render-list a');
+            loadRenderor(renderType, viewContent);
+        });
     }
     function removeElm() {
         $(".demo").delegate(".remove", "click", function(e) {
@@ -237,6 +244,28 @@ APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.t
                 clearDemo()
             }
         })
+    }
+   /**
+    * @description load the basic renderor like line/column/pie/table and so on
+    * @param {string} t type of renderor
+    * @param {string} target render target
+    * @param {Object} settings of renderor type
+    * @returns {NULL}
+    **/
+    function loadRenderor (t, target, settings) {
+        var settings = settings || {};
+        var fullPath = templatePath + '/charts/modules/basic' + t + '.json';
+        $.ajax({
+            url: fullPath,
+            async: false,
+            //dataType: 'JSON',
+            success: function (data) {
+                target.highcharts($.extend(true, data, settings));
+            }
+        });
+        $.get(fullPath, {}, function (d) {
+            console.warn(d, '  in basicline.json');
+        });
     }
     function clearDemo() {
         $(".demo").empty();
@@ -338,7 +367,7 @@ APP.use(['jquery-2.0.3', 'jquery-1.8.2', 'jtemplates' ,'jquery.ui', 'jquery.ui.t
                     var item = t.item.find('div.view[data-apipath]');
                     $.getJSON(rapPath + item.data('apipath') + '?callback=?', item.data('param'), function (data) {
                         console.warn(item.data('param'), '    param in property');
-                        item.find('pre').html(JSON.stringify(data));
+                        item.html(JSON.stringify(data));
                     });
                 }
                 // chart preview content wrapper

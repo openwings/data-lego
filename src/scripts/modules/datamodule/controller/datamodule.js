@@ -10,6 +10,14 @@
                         {
                             path: '/=/view/shopflow/type/daily',
                             title: '按天、按小时折线图',
+                            configs: {
+                                // Here is a list for this data API supports how many types in UI
+                                types: [
+                                    {'column': '柱状'},
+                                    {'line': '线图'},
+                                    {'table': '表格'}
+                                ]
+                            },
                             param: {
                                 days: '2013-12-12..2013-12-12'
                             }
@@ -17,11 +25,27 @@
                         {
                             path: '/=/view/summarydata/~/~',
                             title: '日均表格对比',
+                            configs: {
+                                // Here is a list for this data API supports how many types in UI
+                                types: [
+                                    {'column': '柱状'},
+                                    {'line': '线图'},
+                                    {'table': '表格'}
+                                ]
+                            },
                             param: {}
                         },
                         {
                             path: '/=/view/itemflow/type/top',
                             title: '最近7天被访问宝贝TOP10',
+                            configs: {
+                                // Here is a list for this data API supports how many types in UI
+                                types: [
+                                    {'column': '柱状'},
+                                    {'line': '线图'},
+                                    {'table': '表格'}
+                                ]
+                            },
                             param: {
                                 days: '2013-12-12..2013-12-12',
                                 sort: 'uv'
@@ -30,6 +54,14 @@
                         {
                             path: '/=/view/visitorsrc/type/top',
                             title: '最近7天访客来源TOP10',
+                            configs: {
+                                // Here is a list for this data API supports how many types in UI
+                                types: [
+                                    {'column': '柱状'},
+                                    {'line': '线图'},
+                                    {'table': '表格'}
+                                ]
+                            },
                             param: {
                                 days: '2013-12-12..2013-12-12'
                             }
@@ -37,6 +69,14 @@
                         {
                             path: '/=/view/locflow/type/top',
                             title: '最近7天访客地区TOP10',
+                            configs: {
+                                // Here is a list for this data API supports how many types in UI
+                                types: [
+                                    {'column': '柱状'},
+                                    {'line': '线图'},
+                                    {'table': '表格'}
+                                ]
+                            },
                             param: {
                                 days: '2013-12-12..2013-12-12',
                                 country: 4,
@@ -52,11 +92,27 @@
                         {
                             path: '/=/view/mobile/summarydata/~',
                             title: '今日、昨日、上周同期、前七日日均数据对比',
+                            configs: {
+                                // Here is a list for this data API supports how many types in UI
+                                types: [
+                                    {'column': '柱状'},
+                                    {'line': '线图'},
+                                    {'table': '表格'}
+                                ]
+                            },
                             param: {}
                         },
                         {
                             path: '/=/view/mobile/shopflow/daily',
                             title: '按天、按小时折线图',
+                            configs: {
+                                // Here is a list for this data API supports how many types in UI
+                                types: [
+                                    {'column': '柱状'},
+                                    {'line': '线图'},
+                                    {'table': '表格'}
+                                ]
+                            },
                             param: {
                                 days: '2013-12-12..2013-12-12'
                             }
@@ -69,6 +125,14 @@
                         {
                             path: '/=/view/basicinfo/~/~',
                             title: '店铺基本信息',
+                            configs: {
+                                // Here is a list for this data API supports how many types in UI
+                                types: [
+                                    {'column': '柱状'},
+                                    {'line': '线图'},
+                                    {'table': '表格'}
+                                ]
+                            },
                             param: {}
                         }
                     ]
