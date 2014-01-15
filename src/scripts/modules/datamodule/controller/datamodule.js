@@ -13,7 +13,7 @@
                             configs: {
                                 // Here is a list for this data API supports how many types in UI
                                 types: [
-                                    {'column': '柱状'},
+                                    {'bar': '柱状'},
                                     {'line': '线图'},
                                     {'table': '表格'}
                                 ]
@@ -28,7 +28,7 @@
                             configs: {
                                 // Here is a list for this data API supports how many types in UI
                                 types: [
-                                    {'column': '柱状'},
+                                    {'bar': '柱状'},
                                     {'line': '线图'},
                                     {'table': '表格'}
                                 ]
@@ -41,7 +41,7 @@
                             configs: {
                                 // Here is a list for this data API supports how many types in UI
                                 types: [
-                                    {'column': '柱状'},
+                                    {'bar': '柱状'},
                                     {'line': '线图'},
                                     {'table': '表格'}
                                 ]
@@ -57,7 +57,7 @@
                             configs: {
                                 // Here is a list for this data API supports how many types in UI
                                 types: [
-                                    {'column': '柱状'},
+                                    {'bar': '柱状'},
                                     {'line': '线图'},
                                     {'table': '表格'}
                                 ]
@@ -72,7 +72,7 @@
                             configs: {
                                 // Here is a list for this data API supports how many types in UI
                                 types: [
-                                    {'column': '柱状'},
+                                    {'bar': '柱状'},
                                     {'line': '线图'},
                                     {'table': '表格'}
                                 ]
@@ -95,7 +95,7 @@
                             configs: {
                                 // Here is a list for this data API supports how many types in UI
                                 types: [
-                                    {'column': '柱状'},
+                                    {'bar': '柱状'},
                                     {'line': '线图'},
                                     {'table': '表格'}
                                 ]
@@ -108,7 +108,7 @@
                             configs: {
                                 // Here is a list for this data API supports how many types in UI
                                 types: [
-                                    {'column': '柱状'},
+                                    {'bar': '柱状'},
                                     {'line': '线图'},
                                     {'table': '表格'}
                                 ]
@@ -128,7 +128,7 @@
                             configs: {
                                 // Here is a list for this data API supports how many types in UI
                                 types: [
-                                    {'column': '柱状'},
+                                    {'bar': '柱状'},
                                     {'line': '线图'},
                                     {'table': '表格'}
                                 ]
